@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VisionLab | Image Processing — {{ student_name }} ({{ roll_no }})</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="noise"></div><div class="grid-bg"></div>
+<header class="site-nav">
+  <a class="brand" href="/"><span class="brand-mark">V</span><span>Vision<span class="mint">Lab</span></span></a>
+  <nav><a href="#practicals">Practicals</a><a href="#workflow">Workflow</a><a href="#about">About</a></nav>
+  <div class="student-chip">{{ student_name }} · {{ roll_no }}</div>
+  <a class="nav-chip" href="#practicals">Launch Lab <b>↗</b></a>
+</header>
+<main>
+<section class="hero-home">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="live-dot"></span> IMAGE PROCESSING / PRACTICAL PORTAL — {{ student_name }} · {{ roll_no }}</div>
+    <h1>See the image.<br><span>Understand</span> the process.</h1>
+    <p>Turn your Image Processing syllabus into a visual, hands-on laboratory. Upload an image, run OpenCV operations and compare the result instantly.</p>
+    <div class="hero-buttons"><a class="btn-primary" href="#practicals">Explore Practicals <span>→</span></a><a class="btn-ghost" href="#workflow">See workflow</a></div>
+    <div class="hero-metrics"><div><strong>11</strong><small>LAB MODULES</small></div><div><strong>30+</strong><small>OPERATIONS</small></div><div><strong>OpenCV</strong><small>PROCESSING ENGINE</small></div></div>
+  </div>
+  <div class="hero-visual">
+    <div class="visual-meta meta-a">RGB / 24 BIT</div><div class="visual-meta meta-b">PIXEL MATRIX</div>
+    <div class="image-card-hero"><div class="fake-photo"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="scanline"></div><div class="target"><span></span></div><div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div></div>
+    <div class="floating-tag"><span>01</span><div><b>Image input</b><small>Ready to process</small></div></div>
+  </div>
+</section>
+<section class="section" id="practicals">
+  <div class="section-head"><div><span class="section-kicker">01 / THE LAB</span><h2>Practical modules</h2><p>Core experiments, arranged from image fundamentals to detection and edge analysis.</p></div><div class="count-box"><b>11</b><span>MODULES</span></div></div>
+  <div class="module-grid">
+  {% for n,title in practicals.items() %}
+    <a class="module" href="/practical/{{n}}"><div class="module-top"><span>{{ "%02d"|format(n) }}</span><b>↗</b></div><div class="module-icon">{% if n==1 %}◈{% elif n==2 %}✦{% elif n==3 %}☀{% elif n==4 %}◉{% elif n==5 %}⌁{% elif n==6 %}▤{% elif n==7 %}▦{% elif n==8 %}⌕{% elif n==9 %}✧{% elif n==10 %}◐{% else %}∿{% endif %}</div><small>PRACTICAL {{ "%02d"|format(n) }}</small><h3>{{title}}</h3><div class="module-foot"><span>Open experiment</span><i>→</i></div></a>
+  {% endfor %}
+  </div>
+</section>
+<section class="workflow" id="workflow"><div class="workflow-title"><span class="section-kicker">02 / WORKFLOW</span><h2>From pixels<br><em>to insight.</em></h2></div><div class="steps"><div><span>01</span><b>Upload</b><p>Bring in a JPG, PNG or common image.</p></div><div><span>02</span><b>Configure</b><p>Choose the operation and parameters.</p></div><div><span>03</span><b>Process</b><p>Flask sends the image to OpenCV.</p></div><div><span>04</span><b>Compare</b><p>Inspect input and output side by side.</p></div></div></section>
+<section class="about-home" id="about"><div class="about-num">IP</div><div><span class="section-kicker">03 / ABOUT</span><h2>A lab that looks<br><span>as good as it works.</span></h2><p>Designed for practical demonstrations, viva preparation and project presentation. The portal uses Python, Flask, OpenCV and NumPy for real image processing—not just static mockups.</p><div class="stack"><span>PYTHON</span><span>FLASK</span><span>OPENCV</span><span>NUMPY</span><span>HTML / CSS / JS</span></div></div></section>
+</main>
+<footer><span>VISIONLAB / IMAGE PROCESSING LAB</span><span>{{ student_name }} · {{ roll_no }} · PYTHON + FLASK + OPENCV</span></footer>
+</body></html>
