@@ -1343,7 +1343,7 @@ def process(number):
 
         # ====================================================
         # IMPORTANT:
-        # ADD CS24103 TO EVERY OUTPUT IMAGE
+        # ADD CS24113 TO EVERY OUTPUT IMAGE
         # ====================================================
 
         result = add_roll_no(result)
